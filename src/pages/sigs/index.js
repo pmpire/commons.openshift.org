@@ -10,17 +10,20 @@ import {
   ExternalLink,
   Flag,
   Power,
+  Share2,
   Shield,
   Smartphone,
   Tool,
   Truck,
   Zap,
+  Loader,
 } from 'react-feather'
 import { StaticImage } from 'gatsby-plugin-image'
 import Callout from '../../components/callout'
 import IconBox from '../../components/iconbox'
 import * as Accordion from '@radix-ui/react-accordion'
 import OperatorsCarousel from '../../components/operators-carousel'
+import ModernTriangle from '../../icons/ModernTriangle'
 
 const AccordionItem = ({ ...props }) => {
   const { title, icon, children } = props
@@ -34,14 +37,14 @@ const AccordionItem = ({ ...props }) => {
           className={`${
             open &&
             'text-secondary-800 hover:text-secondary-900 bg-secondary-200 hover:bg-secondary-200'
-          } w-full border-b border-base-500 hover:bg-base-200 focus:outline-none focus:ring-inset focus:ring-2 focus:ring-primary-600 text-left py-4 px-3 text-xl lg:text-2xl font-medium`}
+            } w-full border-b border-base-500 hover:bg-base-200 focus:outline-none focus:ring-inset focus:ring-2 focus:ring-primary-600 text-left py-4 px-3 text-xl lg:text-2xl font-medium`}
         >
           <h2 className="flex items-center space-x-3">
             {open ? (
               <MinusCircle className="flex-shrink-0 w-6 h-6" />
             ) : (
-              <PlusCircle className="flex-shrink-0 w-6 h-6" />
-            )}
+                <PlusCircle className="flex-shrink-0 w-6 h-6" />
+              )}
             <span className="flex gap-2 space-x-6 items-center">
               <span className="inline h-6 w-6 lg:h-8 lg:w-8">{icon}</span> {title}
             </span>
@@ -84,6 +87,234 @@ export default function SIGPage() {
               that you can find everything you need in one place around a central topic.
             </p>
             <Accordion.Root className="w-full border-t border-base-500" type="multiple">
+              <AccordionItem title="Edge" icon={<Loader alt="" />}>
+                <p className={paragraphStyle}>
+                  The purpose of the edge SIG is to collaborate and share information around best practices and lessons learned for the community’s deployment at the edge.
+                </p>
+                <h3 className={h3Style}>About edge computing</h3>
+                <p className={paragraphStyle}>
+                  Simply put, edge computing is when compute/insights/decisions happen outside of larger, centralized data centers and public clouds.
+                  This Special Interest Group is a way for the community to meet, discuss and share information about a quickly-growing, highly-variable subject.
+                </p>
+                <h3 className={h3Style}>Links</h3>
+                <div className="grid lg:grid-cols-3 my-8 lg:my-0 gap-8 page-wrapper">
+                  <Callout
+                    title="What is edge computing?"
+                    url="https://www.redhat.com/en/topics/edge-computing/what-is-edge-computing"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Edge computing is computing that takes place at or near the physical location of either the user or the source of the data
+                  </Callout>
+                  <Callout
+                    title="Edge computing with Red Hat OpenShift?"
+                    url="https://www.redhat.com/en/technologies/cloud-computing/openshift/edge-computing"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    For organizations using cloud-native applications, virtual machines (VMs), IoT (Internet of Things), and cloud computing to deliver extraordinary customer experiences, or using applications powered by artificial intelligence and machine learning (AI/ML) to unlock new opportunities from data, they are evolving and distributing their IT infrastructure using edge computing to get resources as close to the data and users as possible.
+                  </Callout>
+                  <Callout
+                    title="Edge computing with Red Hat Device Edge"
+                    url="https://www.redhat.com/en/topics/edge-computing/what-is-edge-computing"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Devices at the far edge need a different approach. Edge devices such as assembly line tools, IoT gateways, points of sale, and industrial controllers have to operate with limited computing resources, power, cooling, and connectivity.
+                  </Callout>
+                </div>
+                <h3 className={h3Style}>Connect with us</h3>
+                <div className="grid lg:grid-cols-2 my-8 lg:my-0 gap-8 page-wrapper">
+                  <Callout
+                    title="Missed a session?"
+                    url="https://www.youtube.com/playlist?list=PLaR6Rq6Z4IqceDBWosHflxRFiJSqIT4Aa"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Check out our Edge SIG Playlist
+                  </Callout>
+                  <Callout
+                    title="Join our live sessions"
+                    url="https://docs.google.com/document/d/1Amxly4E5FHyH8QbQQxHip2d3Ip87Hdrh_IPpoP7YLiE/edit?usp=sharing"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    OpenShift Commons Edge SIG - Agenda
+                  </Callout>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Validated Patterns" icon={<ModernTriangle alt="" />}>
+                <p className={paragraphStyle}>
+                  The focus of the Validated Patterns SIG is to discuss common use cases and the business problems being solved in order to spark conversation and share architectures.
+                  In discussing the use cases being developed, we can learn from each other and understand why specific components were chosen and allow each of us to grow over time.
+                  This SIG is open to all Architecture related Communities of Practice.
+                </p>
+                <div className="mb-8 flex flex-col lg:flex-row lg:space-x-8 text-left">
+                  <div className="w-full lg:w-1/2">
+                    <h3 className={h3Style}>Introduction</h3>
+                    <p className={paragraphStyle}>
+                      Watch this video to see benefits of using Patterns to deploy distributed architectures
+                    </p>
+                    <div className="video-embed mb-8">
+                      <iframe
+                        title="YouTube Video"
+                        src="https://www.youtube.com/embed/dGsoUNjHYOw?si=gqtTKp9EAAkB3bxA"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <h3 className={h3Style}>Principles</h3>
+                    <ul className="mb-4 list-disc ml-4 text-lg">
+                      <li className="mb-4">Distributed reference architectures</li>
+                      <li className="mb-4">GitOps Framework</li>
+                      <li className="mb-4">Declarative modalities</li>
+                      <li className="mb-4">Repeatable, Scalable, Extensible</li>
+                      <li className="mb-4">Built and Maintained as code</li>
+                      <li className="mb-4">Fast track proofs of concept (POCs)</li>
+                      <li className="mb-4">Create repeatable frameworks for easier testing and deployment</li>
+                    </ul>
+                    <h4 className={h4Style}>About Validated Patterns</h4>
+                    <p className={paragraphStyle}>
+                      Validated Patterns are an evolution of how you deploy applications in a hybrid cloud.
+                      With a pattern, you can automatically deploy a full application stack through a GitOps-based framework.
+                      With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (CI) over your application.
+                    </p>
+                  </div>
+                </div>
+                <h3 className={h3Style}>Links</h3>
+                <div className="grid lg:grid-cols-5 my-8 lg:my-0 gap-8 page-wrapper">
+                  <Callout
+                    title="AGENDA"
+                    url="http://red.ht/commons-vpsig-agenda"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Get info & notes
+                  </Callout>
+                  <Callout
+                    title="SLACK"
+                    type="warning"
+                    url="https://openshiftcommons.slack.com/archives/C059ABEU2ET"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Join the conversation
+                  </Callout>
+                  <Callout
+                    title="CALENDAR"
+                    url="https://calendar.google.com/calendar/u/0?cid=b3BlbnNoaWZ0Y29tbW9uc3JoQGdtYWlsLmNvbQ"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Add the Commons calendar
+                  </Callout>
+                  <Callout
+                    title="PLAYLIST"
+                    type="warning"
+                    url="https://youtube.com/playlist?list=PLaR6Rq6Z4Iqf8CbyJFX9vSVxBc9sBTIKK&si=vDh82Ur4GUixyS9I"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    View previous sessions
+                  </Callout>
+                  <Callout
+                    title="SUBMIT"
+                    url="https://forms.gle/3QjcCiB6oZsBMM1u6"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Submit a session
+                  </Callout>
+                </div>
+                <p className={paragraphStyle}>
+                  Ready to join us? Check out the <b>Agenda</b> doc, join the <b>Slack</b> channel, and add us to your <b>Calendar</b>.
+                  Missed a session? Take a look at our <b>Playlist</b> and <b>Submit</b> a talk for a future session.
+                </p>
+              </AccordionItem>
+
+              <AccordionItem title="Data" icon={<Share2 alt="" />}>
+                <p className={paragraphStyle}>
+                  The Data Special Interest Group (SIG) is a forum for lively interactions about all things data related.
+                  Whether you’re working on solutions for Storage and Data Services, Business Continuity and Disaster Recovery,
+                  Databases and Data Cache, Data Discovery and Federation—<b>THIS IS THE PLACE TO BE!</b>
+                </p>
+                <div className="mb-8 flex flex-col lg:flex-row lg:space-x-8 text-left">
+                  <div className="w-full lg:w-1/2">
+                    <h3 className={h3Style}>Introduction</h3>
+                    <p className={paragraphStyle}>
+                      Check out this video on data storage modalities and use cases. Just one of many subjects open for discussion.
+                    </p>
+                    <div className="video-embed mb-8">
+                      <iframe
+                        title="YouTube Video"
+                        src="https://www.youtube.com/embed/PGVzrcgC16g?si=noIGqdC3D5pOs-XR"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <h3 className={h3Style}>Principles</h3>
+                    <ul className="mb-4 list-disc ml-4 text-lg">
+                      <li className="mb-4">Persistence and Storage in Kubernetes</li>
+                      <li className="mb-4">Business Continuity</li>
+                      <li className="mb-4">Disaster Recovery strategies</li>
+                      <li className="mb-4">Data security and governance</li>
+                      <li className="mb-4">Databases, Vectors, and Graphs</li>
+                      <li className="mb-4">Warehouses, Data Lakes, & Lake Houses</li>
+                      <li className="mb-4">Data discovery and federation</li>
+                      <li className="mb-4">Search and queries</li>
+                    </ul>
+                    <h4 className={h4Style}>About the Data SIG</h4>
+                    <p className={paragraphStyle}>
+                      Come join fellow practitioners, share ideas, successes, questions.
+                      This SIG is open to a wide breadth of topics across industries and workloads.
+                      Talks may include subjects such as data concerns in modern Virtualization platforms,
+                      backup and recovery best practices to address Ransomware attacks, federated queries
+                      driving better business insights, database resiliency in Kubernetes, how organizations
+                      are using vector and graph databases for Generative AI, and so much more!
+                    </p>
+                  </div>
+                </div>
+                <h3 className={h3Style}>Links</h3>
+                <div className="grid lg:grid-cols-5 my-8 lg:my-0 gap-8 page-wrapper">
+                  <Callout
+                    title="AGENDA"
+                    url="http://red.ht/commons-datasig-agenda"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Get info & notes
+                  </Callout>
+                  <Callout
+                    title="SLACK"
+                    type="warning"
+                    url="https://openshiftcommons.slack.com/archives/C07JKN0J5C6"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Join the conversation
+                  </Callout>
+                  <Callout
+                    title="CALENDAR"
+                    url="https://calendar.google.com/calendar/u/0?cid=b3BlbnNoaWZ0Y29tbW9uc3JoQGdtYWlsLmNvbQ"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Add the Commons calendar
+                  </Callout>
+                  <Callout
+                    title="PLAYLIST"
+                    type="warning"
+                    url="https://www.youtube.com/playlist?list=PLaR6Rq6Z4Iqe0ROvj-HUjoMV0LXQ3aQq4"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    View previous sessions
+                  </Callout>
+                  <Callout
+                    title="SUBMIT"
+                    url="https://forms.gle/UnMQH9NJoEsgL8n89"
+                    icon={<ExternalLink alt="" />}
+                  >
+                    Submit a session
+                  </Callout>
+                </div>
+                <p className={paragraphStyle}>
+                  Ready to join us? Check out the <b>Agenda</b> doc, join the <b>Slack</b> channel, and add us to your <b>Calendar</b>.
+                  Missed a session? Take a look at our <b>Playlist</b> and <b>Submit</b> a talk for a future session.
+                </p>
+              </AccordionItem>
               <AccordionItem title="DevSecOps" icon={<Shield alt="" />}>
                 <p className={paragraphStyle}>
                   The purpose of the DevSecOps SIG is to collaborate and share information around
@@ -114,7 +345,7 @@ export default function SIGPage() {
                       <li className="mb-4">Proactive Hunting</li>
                       <li className="mb-4">Continuous Detection and Response</li>
                     </ul>
-                    <h4 className={h4Style}>About DevSeCops</h4>
+                    <h4 className={h4Style}>About DevSecOps</h4>
                     <p className={paragraphStyle}>
                       DevSecOps is as much about operations as it is about development. This Special
                       Interest Group is way for like-minded engineers to discuss and share
